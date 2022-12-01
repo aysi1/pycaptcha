@@ -12,7 +12,7 @@ def generate():
   # img: base64 encoded image
   return jsonify(dict(img=img, timestamp=ts, h=h, sig=sig))
 
-@app.route('/verify')
+@app.route('/verify', methods=['POST'])
 def verify():
   res = request.get_json()
   h = res.get('h')
